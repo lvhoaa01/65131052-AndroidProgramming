@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HelloWorld</string>
+    <string name="nhap_so_a">Nhập số thứ nhất (A)</string>
+    <string name="nhap_so_b">Nhập số thứ hai (B)</string>
+    <string name="tinh_tong">Tính Tổng</string>
+    <string name="ket_qua">Kết quả: </string>
+</resources>
