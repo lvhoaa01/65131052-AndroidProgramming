@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="40dp"> <Button
+    android:id="@+id/btnNut1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="NÚT SỐ 1"
+    android:backgroundTint="#6200EA"
+    android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnNut2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" android:text="NÚT SỐ 2"
+        android:backgroundTint="#6200EA"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnNut3"
+        android:layout_width="160dp" android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="NÚT SỐ 3"
+        android:backgroundTint="#6200EA"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
