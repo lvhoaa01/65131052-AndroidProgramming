@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         btnChia = findViewById(R.id.btnChia);
         tvKetQua = findViewById(R.id.tvKetQua);
 
-        // 2. Gán sự kiện click cho 4 nút.
-        // Thay vì viết 4 đoạn code dài, ta gom lại gọi chung 1 hàm tinhToan()
         btnCong.setOnClickListener(v -> tinhToan("+"));
         btnTru.setOnClickListener(v -> tinhToan("-"));
         btnNhan.setOnClickListener(v -> tinhToan("*"));
