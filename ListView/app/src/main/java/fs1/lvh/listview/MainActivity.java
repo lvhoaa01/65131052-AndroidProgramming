@@ -1,0 +1,63 @@
+package fs1.lvh.listview;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+    ListView listView;
+    Button btnChuyen;
+    String[] dsVatLieu = {
+            "Xi măng", "Gạch", "Đá chẻ", "Sơn", "Cát", "Vôi",
+            "Thép", "Gạch ống", "Gạch men", "Ngói", "Ống nước",
+            "Sắt hộp", "Tôn lạnh", "Cửa nhôm", "Kính", "Keo dán",
+            "Bột trét", "Chống thấm", "Dây điện", "Ổ cắm",
+            "Đèn LED", "Sơn lót", "Sơn phủ", "Cát vàng",
+            "Đá 1x2", "Đá 4x6", "Cát xây", "Cát tô",
+            "Gạch block", "Gạch bê tông", "Thép cây", "Thép cuộn"
+    };
+    void getDieuKhien() {
+        listView = findViewById(R.id.listView);
+        btnChuyen = findViewById(R.id.btnChuyen);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        getDieuKhien();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dsVatLieu);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(MainActivity.this, "Bạn đã chọn vật liệu: " + item, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        View header = getLayoutInflater().inflate(R.layout.vat_lieu_header, null);
+//        listView.addHeaderView(header);
+
+        btnChuyen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, fs1.lvh.listview.MonAnActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+}

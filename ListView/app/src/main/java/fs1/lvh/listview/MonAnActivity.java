@@ -1,0 +1,58 @@
+package fs1.lvh.listview;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MonAnActivity extends AppCompatActivity {
+    ListView listView;
+    Button btnChuyen;
+    String[] monAn = {
+            "Bún đậu mắm tôm", "Bún cá Ninh Hòa", "Bánh xèo", "Cháo lòng bánh hỏi",
+            "Phở bò", "Phở gà", "Bún bò Huế", "Hủ tiếu",
+            "Cơm tấm", "Cơm gà", "Cơm chiên", "Mì xào",
+            "Bánh mì thịt", "Bánh mì trứng", "Bánh mì chả cá",
+            "Gỏi cuốn", "Chả giò", "Nem nướng",
+            "Lẩu thái", "Lẩu cá", "Lẩu bò",
+            "Bún riêu", "Bún thịt nướng", "Bún mắm",
+            "Miến gà", "Miến lươn", "Cháo gà", "Cháo vịt"
+    };
+    void getDieuKhien(){
+        listView = findViewById(R.id.listView);
+        btnChuyen = findViewById(R.id.btnChuyen);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sr);
+
+        getDieuKhien();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, monAn);
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MonAnActivity.this, "Bạn đã chọn món ăn: "+ monAn[i], Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnChuyen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MonAnActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+}
