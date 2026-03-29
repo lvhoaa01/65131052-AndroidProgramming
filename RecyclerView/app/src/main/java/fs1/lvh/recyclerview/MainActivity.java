@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
     //phuong thuc
     ArrayList<Landscape> getDataForRecyclerView() {
         ArrayList<Landscape> lstData = new ArrayList<>();
-        lstData.add(new Landscape("nuidoi", "Núi đôi hùng vĩ"));
-        lstData.add(new Landscape("thomong", "Khung cảnh thơ mộng"));
-        lstData.add(new Landscape("troihong", "Bầu trời hồng rực rỡ"));
-        lstData.add(new Landscape("troixanh", "Trời xanh bao la"));
+        lstData.add(new Landscape("s1", "Cảnh 1"));
+        lstData.add(new Landscape("s2", "Cảnh 2"));
+        lstData.add(new Landscape("s3", "Cảnh 3"));
+        lstData.add(new Landscape("s4", "Cảnh 4"));
         return lstData;
     }
 }
